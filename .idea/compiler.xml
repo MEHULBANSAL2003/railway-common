@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common-security" />
-        <module name="common-logging" />
         <module name="common-exceptions" />
+        <module name="common-models" />
+        <module name="common-logging" />
       </profile>
     </annotationProcessing>
   </component>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="common-exceptions" options="-parameters" />
       <module name="common-logging" options="-parameters" />
+      <module name="common-models" options="-parameters" />
       <module name="common-security" options="-parameters" />
     </option>
   </component>

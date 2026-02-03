@@ -1,4 +1,5 @@
 com/railway/common/exceptions/GlobalExceptionHandler.class
 com/railway/common/exceptions/BaseException.class
 com/railway/common/exceptions/ApiError.class
+com/railway/common/exceptions/ApiResponse.class
 com/railway/common/exceptions/ApiErrorResponse.class

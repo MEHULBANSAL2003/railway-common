@@ -1,1 +1,5 @@
 com/railway/common/enums/Role.class
+com/railway/common/enums/AdminRole.class
+com/railway/common/enums/LoginMode.class
+com/railway/common/enums/AuthProvider.class
+com/railway/common/enums/Department.class

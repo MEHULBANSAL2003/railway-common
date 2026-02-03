@@ -1,4 +1,5 @@
 /Users/astrotalk/Sites/railways/railway-backend/railway-common/common-exceptions/src/main/java/com/railway/common/exceptions/ApiError.java
 /Users/astrotalk/Sites/railways/railway-backend/railway-common/common-exceptions/src/main/java/com/railway/common/exceptions/ApiErrorResponse.java
+/Users/astrotalk/Sites/railways/railway-backend/railway-common/common-exceptions/src/main/java/com/railway/common/exceptions/ApiResponse.java
 /Users/astrotalk/Sites/railways/railway-backend/railway-common/common-exceptions/src/main/java/com/railway/common/exceptions/BaseException.java
 /Users/astrotalk/Sites/railways/railway-backend/railway-common/common-exceptions/src/main/java/com/railway/common/exceptions/GlobalExceptionHandler.java
