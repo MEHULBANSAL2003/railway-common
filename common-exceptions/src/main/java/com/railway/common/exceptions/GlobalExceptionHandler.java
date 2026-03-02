@@ -2,8 +2,10 @@ package com.railway.common.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.security.access.AccessDeniedException;
@@ -94,6 +96,34 @@ public class GlobalExceptionHandler {
     return ResponseEntity
       .status(HttpStatus.FORBIDDEN)
       .body(ApiErrorResponse.error(error));
+  }
+
+  @ExceptionHandler(HttpMessageNotReadableException.class)
+  public ResponseEntity<ApiErrorResponse> handleInvalidFormat(HttpMessageNotReadableException ex) {
+
+    ApiError error = new ApiError(
+      "INVALID_REQUEST",
+      "Invalid request body. Please check field types.",
+      null
+    );
+    return ResponseEntity
+      .status(HttpStatus.BAD_REQUEST)
+      .body(ApiErrorResponse.error(error));
+
+  }
+
+  @ExceptionHandler(MissingServletRequestParameterException.class)
+  public ResponseEntity<ApiErrorResponse> handleInvalidFormat(MissingServletRequestParameterException ex) {
+
+    ApiError error = new ApiError(
+      "INVALID_REQUEST",
+      "Invalid request. Please check field types.",
+      null
+    );
+    return ResponseEntity
+      .status(HttpStatus.BAD_REQUEST)
+      .body(ApiErrorResponse.error(error));
+
   }
 
 
