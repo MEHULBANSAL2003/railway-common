@@ -6,8 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="common-pagination" />
         <module name="common-security" />
         <module name="common-exceptions" />
+        <module name="common-excel" />
         <module name="common-models" />
         <module name="common-logging" />
       </profile>
@@ -15,9 +17,11 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common-excel" options="-parameters" />
       <module name="common-exceptions" options="-parameters" />
       <module name="common-logging" options="-parameters" />
       <module name="common-models" options="-parameters" />
+      <module name="common-pagination" options="-parameters" />
       <module name="common-security" options="-parameters" />
     </option>
   </component>
