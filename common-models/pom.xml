@@ -16,6 +16,24 @@
   <description>Shared enums, DTOs, and models for all microservices</description>
 
   <dependencies>
-    <!-- No dependencies needed for basic enums -->
+
+    <!-- JPA annotations — @MappedSuperclass, @Column, @EntityListeners -->
+    <dependency>
+      <groupId>jakarta.persistence</groupId>
+      <artifactId>jakarta.persistence-api</artifactId>
+    </dependency>
+
+    <!-- @CreatedDate, @LastModifiedDate, AuditingEntityListener -->
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-jpa</artifactId>
+    </dependency>
+
+    <!-- @Getter, @Setter, @Builder etc -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+
   </dependencies>
 </project>
