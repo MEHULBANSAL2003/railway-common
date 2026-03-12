@@ -9,6 +9,8 @@ import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.web.servlet.NoHandlerFoundException;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +30,23 @@ public class GlobalExceptionHandler {
 
     return ResponseEntity
       .status(ex.getHttpStatus())
+      .body(ApiErrorResponse.error(error));
+  }
+
+  @ExceptionHandler(NoResourceFoundException.class)
+  public ResponseEntity<ApiErrorResponse> handleApiNotFound(NoResourceFoundException ex) {
+
+    ApiError error = new ApiError(
+      "API_NOT_FOUND",
+      "The requested API endpoint does not exist",
+      Map.of(
+        "path", ex.getResourcePath(),
+        "method", ex.getHttpMethod()
+      )
+    );
+
+    return ResponseEntity
+      .status(HttpStatus.NOT_FOUND)
       .body(ApiErrorResponse.error(error));
   }
 
